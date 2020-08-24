@@ -17,7 +17,7 @@ if(isset($_POST['search']))
 
 function filterTable($query)
 {
-    $connect = mysqli_connect("database-22-instance-1.cgpp6vkbhbbo.us-west-2.rds.amazonaws.com", "admin", "admin123", "etldev");
+    $connect = mysqli_connect("db", "admin", "admin123", "etldev");
     $filter_Result = mysqli_query($connect, $query);
     return $filter_Result;
 }
