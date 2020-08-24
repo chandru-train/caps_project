@@ -4,7 +4,7 @@ if(isset($_POST['search']))
 {
     $valueToSearch = $_POST['valueToSearch'];
 
-    $query = "SELECT * FROM `table222` where `payment_id` LIKE '%".$valueToSearch."%'";
+    $query = "SELECT * FROM `trans_details` where `payment_id` LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
 
 }
@@ -17,7 +17,7 @@ if(isset($_POST['search']))
 
 function filterTable($query)
 {
-    $connect = mysqli_connect("ebdb.cexprcw7x35j.us-east-1.rds.amazonaws.com", "admin", "admin123", "eddb");
+    $connect = mysqli_connect("database-22-instance-1.cgpp6vkbhbbo.us-west-2.rds.amazonaws.com", "admin", "admin123", "etldev");
     $filter_Result = mysqli_query($connect, $query);
     return $filter_Result;
 }
